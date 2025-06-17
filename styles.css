@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+}
 
 body {
     font-family: "Poppins";
@@ -43,7 +52,7 @@ body {
     align-items: center;
 }
 .left_container {
-
+    opacity: 0.6;
     width: 50%;
     height: 100%;
     display: flex;
@@ -51,6 +60,7 @@ body {
     align-items: center;
     text-align: left;
     gap: 30px;
+
 }
 
 .right_container {
@@ -60,8 +70,9 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding-right: 20px;
 }
-#input_text {
+.input_text {
     padding: 10px 15px;
     width: 300px;
     border: 1px solid #ccc;
@@ -70,11 +81,11 @@ body {
     transition: border-color 0.3s ease;
 }
 
-#input_text:focus {
+.input_text:focus {
     outline: none;
     border-color: #06b488;
-    box-shadow:30%;
 }
+
 .button {
     width: 120px;
     height: 40px;
@@ -86,18 +97,25 @@ body {
     cursor: pointer;
 }
 
+#bt1{
+    animation: fadeSlideIn 1s ease-out forwards;
+}
+
 .hero_section {
     margin-top: 100px;
     text-align: center;
     align-items: center;
     justify-content: center;
+    padding-top: 25px;
 }
 .heading_texts{
     color: #45475b;
     font-size: 50px;
+    animation: fadeSlideIn 1s ease-out forwards;
 }
 .description_texts{
     color: #06b488;
+    animation: fadeSlideIn 1s ease-out forwards;
 }
 .hero_image img {
     width: 80%;
@@ -107,3 +125,123 @@ body {
     border-radius: 8px;
     text-align: center;
 }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.1);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  border-radius: 8px;
+  width: 800px;
+  height: 350px;
+  max-width: 90%;
+  animation: modalFadeIn 0.4s ease-out;
+}
+
+.heading_texts.welcome{
+    font-size: 20px;
+    animation: none;
+
+}
+
+.modal-leftcontent {
+  width: 50%;
+}
+
+.modal-leftcontent img {
+  width: 375px;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  border-radius: 8px 0 0 8px;
+}
+
+.modal-rightcontent {
+  width: 50%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 15px;
+}
+body.modal-open .wrapper {
+  filter: blur(5px);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.google_button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 75%;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+}
+.google_button:hover {
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+}
+.google_button .textgoogle{
+    font-family: poppins, sans-serif;
+    font-size: 13px;
+    color: #45475b;
+}
+ .or_container {
+  align-items: center;
+  justify-content: center;
+}
+.divider {
+  height: 1px;
+  background-color: #ccc;
+  opacity: 0.6;
+}
+#subbtn{
+  width: 300px;
+  height: 50px;
+}
+.foot{
+  font-size: 10px;
+  opacity: 0.6;
+}
+   
+
