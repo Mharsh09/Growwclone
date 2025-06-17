@@ -34,7 +34,7 @@
         <div class="hero_text">
             <h1 class="heading_texts">Grow your wealth with Groww</h1>
             <p class="description_texts">Invest in stocks, mutual funds, and fixed deposits with ease.</p>
-            <button class="button" id="bt1">Get Started</button>
+            <button class="button get-started" id="bt1">Get Started</button>
             <div class="hero_image">
             <img src="./images_req/cityScapeImage1.7be26e20.jpg" alt="Hero Image">
         </div>
@@ -44,34 +44,52 @@
 <div id="login-modal" class="modal">
   <div class="modal-content">
     <div class="modal-leftcontent">
-      <img src="./images_req/patternImg.svg" alt="Pattern Image">
+         <img src="./images_req/patternImg.svg" alt="Pattern Image">
+         <h2>Investing made simpler.</h2>
+         <div class="text-with-line">
+         <span class="rotating-text">Stocks</span>
+         <div class="loading-line"></div>
+         </div>   
     </div>
     <div class="modal-rightcontent">
-      <span class="close-modal">&times;</span>
-      <h2 class="heading_texts welcome">Welcome to Growwclone</h2>
-
-      <button class="google_button">
-        <img src="./images_req/googleIcon.svg" alt="Google Icon">
-        <div class="textgoogle">Continue with Google</div>
-      </button>
-
-      <div class="or_container">
-        <div class="line"></div>
-        <div class="or_text">Or</div>
-        <div class="line"></div>
+      <div class="modal-right-top">
+        <span class="close-modal">&times;</span>
+        <h2 class="heading_texts welcome">Welcome to Growwclone</h2>
+        <button class="google_button">
+          <img src="./images_req/googleIcon.svg" alt="Google Icon">
+          <div class="textgoogle">Continue with Google</div>
+        </button>
+        <div class="or_container">
+            <div class="divider"></div>
+            <div class="or_text">Or</div>
+            <div class="divider"></div>
+          </div>
       </div>
 
-      <input class="input_text" type="email" placeholder="Your Email Address" />
-      <button class="button" id="subbtn">Continue</button>
-
-      <div class="foot">
-        <p>By proceeding, I agree to 
-            <a href="#">T &amp; C</a>,
-            <a href="#">Privacy Policy </a> &amp;
-            <a href="#">Tariff Rates</a>
-        </p>
+      <div class="modal-right-bottom">
+        <div class="wrap-input-2">
+          <input class="input" type="email" id="email-field" placeholder="Your Email Address">
+          <span class="focus-border"></span>
+        </div>
+        <button class="button" id="subbtn">Continue</button>
       </div>
-    </div>
+        <div class="foot">
+          <p>By proceeding, I agree to 
+              <a href="#">T &amp; C</a>,
+              <a href="#">Privacy Policy </a> &amp;
+              <a href="#">Tariff Rates</a>
+          </p>
+        </div>
+      </div>
+    <div class="verifypage">
+        <h2 class="heading_texts welcome">Verify</h2>
+
+        <input class="input_text"type="text" placeholder="Enter OTP" />
+        <button  class="button">Verify</button>
+        <div class="foot">
+        <p>Enter the 6 digit OTP sent to this email ID</p>
+        </div>
+    </div> 
   </div>
 </div>
 <script src="script.js"></script>
