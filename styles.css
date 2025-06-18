@@ -161,7 +161,8 @@ body {
 .heading_texts.welcome{
     font-size: 20px;
     animation: none;
-
+    padding: 0;
+    margin: 0;
 }
 
 .modal-leftcontent {
@@ -286,6 +287,16 @@ body.modal-open .wrapper {
   font-size: 10px;
   opacity: 0.6;
 }
+
+.error-message{
+  color: red;
+  font-size: 10px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  display:none;
+}
+
    
 .rotating-text {
   position: absolute;
@@ -387,8 +398,11 @@ body.modal-open .wrapper {
   text-align: center;
   align-items: center;
   justify-content: center;
-  padding: 20px;
   gap: 15px;
+}
+.verifypage{
+  flex-shrink: 1;
+  overflow: hidden;
 }
 
 .modal-right-top {
@@ -406,5 +420,25 @@ body.modal-open .wrapper {
   justify-content: flex-end;
   gap: 15px;
   width: 100%;
-  margin-top: auto;
+  margin-top: 0px;
 }
+
+#verifybtn {
+  width: 75%;
+  height: 42px;
+}
+/* 
+.wrap-input-2 .heademail{
+  position: absolute;
+  top: -20px;
+  left: 0;
+  color: #06b488;
+  font-size: 12px;
+  font-weight: 300;
+  z-index: 1;
+} */
+
+.input_text.otpbtn {
+  width: 75%;
+}
+

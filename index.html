@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Growwclone</title>
+    <script src="google.js" differ type="module" ></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="media.css">
 
@@ -55,9 +56,9 @@
       <div class="modal-right-top">
         <span class="close-modal">&times;</span>
         <h2 class="heading_texts welcome">Welcome to Growwclone</h2>
-        <button class="google_button">
+        <button class="google_button" id="google_login">
           <img src="./images_req/googleIcon.svg" alt="Google Icon">
-          <div class="textgoogle">Continue with Google</div>
+          <div class="textgoogle" >Continue with Google</div>
         </button>
         <div class="or_container">
             <div class="divider"></div>
@@ -65,13 +66,13 @@
             <div class="divider"></div>
           </div>
       </div>
-
       <div class="modal-right-bottom">
         <div class="wrap-input-2">
-          <input class="input" type="email" id="email-field" placeholder="Your Email Address">
+          <input class="input usermail" type="email" id="email-field" placeholder="Your Email Address" >
           <span class="focus-border"></span>
+          <p class="error-message">Please enter a valid email address</p>
         </div>
-        <button class="button" id="subbtn">Continue</button>
+        <button class="button" id="subbtn" type="submit">Continue</button>
       </div>
         <div class="foot">
           <p>By proceeding, I agree to 
@@ -82,15 +83,20 @@
         </div>
       </div>
     <div class="verifypage">
-        <h2 class="heading_texts welcome">Verify</h2>
-
-        <input class="input_text"type="text" placeholder="Enter OTP" />
-        <button  class="button">Verify</button>
-        <div class="foot">
+      <h2 class="heading_texts welcome">Verify Your Email</h2>
+      <div class="wrap-input-2">
+          <!-- <p class="heademail">Your Email Address:</p> -->
+          <h2 class="input username" id="verifyuse" >
+          <span class="focus-border"></span>
+      </div>
+    <input class="input_text otpbtn" type="text" placeholder="Enter OTP" />      
+    <button  class="button" id="verifybtn">Verify</button>
+      <div class="foot">
         <p>Enter the 6 digit OTP sent to this email ID</p>
-        </div>
-    </div> 
-  </div>
+      </div>
+    </div>
+
+</div>
 </div>
 <script src="script.js"></script>
 </body>
