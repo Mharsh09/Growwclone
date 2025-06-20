@@ -1,0 +1,30 @@
+{
+  "name": "authfiles",
+  "version": "1.0.0",
+  "description": "Handles OTP generation and verification for Growwclone",
+  "keywords": [
+    "otp",
+    "auth",
+    "growwclone",
+    "express",
+    "node"
+  ],
+  "license": "MIT",
+  "author": "Harsh",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.0",
+    "nodemailer": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
