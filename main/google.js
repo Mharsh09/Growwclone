@@ -24,7 +24,7 @@ googleLogin.addEventListener('click', function () {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const user = result.user;
       console.log(user);
-      window.location.href = "../logged.html";
+      window.location.href = "../main/logged.html";
     })
     .catch((error) => {
       const errorCode = error.code;

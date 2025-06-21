@@ -127,7 +127,7 @@ verifyBtn.addEventListener('click', async () => {
 
     if (res.ok) {
       alert("✅ OTP Verified Successfully!");
-      window.location.href = "../logged.html";
+      window.location.href = "logged.html";
     } else {
       alert(data.message || "❌ Invalid or expired OTP.");
     }
