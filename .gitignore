@@ -2,5 +2,6 @@
 /tmp/*
 !tmp/.gitkeep
 .DS_Store
-/authfiles/node_modules
-/authfiles/.env
+/backend/authfiles/node_modules
+/backend/authfiles/.env
+main/firebase/config.js

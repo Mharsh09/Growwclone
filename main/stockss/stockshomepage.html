@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market</title>
+    <link rel="stylesheet" href="./stocks.css">
+</head>
+<body>
+    <main>
+        <div class="navbar">
+            <div class="logo">
+                <img src="/images_req/groww-logo-light.svg" alt="Groww Logo">
+            </div>
+            <div class="nav-content">
+                <div class="search_container">
+                    <input class="input_text" type="text" placeholder="Search...">
+                </div>
+                <a href="#">Explore</a>
+                <a href="#">Holdings</a>
+                <span id="user-email"></span>
+            </div>
+        </div>
+
+        <div class="mainwrap">
+            <div class="market-indices-wrapper">
+              <div class="market-indices-track">
+                <div class="market-indices">
+                  <div class="index">NIFTY 25,112.40 <span class="change">319.15 (1.29%)</span></div>
+                  <div class="index">SENSEX 82,408.17 <span class="change">1,046.30 (1.29%)</span></div>
+                  <div class="index">BANKNIFTY 56,252.85 <span class="change">675.40 (1.22%)</span></div>
+                  <div class="index">MIDCPNIFTY 12,984.35 <span class="change">256.65 (2.02%)</span></div>
+                  <div class="index">FINNIFTY 20,560.55 <span class="change">145.20 (0.71%)</span></div>
+               
+                  <div class="index">NIFTY 25,112.40 <span class="change">319.15 (1.29%)</span></div>
+                  <div class="index">SENSEX 82,408.17 <span class="change">1,046.30 (1.29%)</span></div>
+                  <div class="index">BANKNIFTY 56,252.85 <span class="change">675.40 (1.22%)</span></div>
+                  <div class="index">MIDCPNIFTY 12,984.35 <span class="change">256.65 (2.02%)</span></div>
+                  <div class="index">FINNIFTY 20,560.55 <span class="change">145.20 (0.71%)</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="explore">
+                <div class="explore-header">
+                    <h1>Most traded on Groww</h1>
+                    <p>See more</p>
+                </div>
+                <div class="card-container" id="cardContainer">
+                    <div class="card">
+                        <div class="stock-data">
+                            <img src="/images_req/googleIcon.svg" alt="Stock Icon">
+                            <span class="stock-names">Google</span>
+                        </div>
+                        <div class="stock-price">
+                            <p class="price">$674.70</p>
+                            <p class="percentage">60.05(9.77%)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="explore-header">
+                    <h1>Top Gainers</h1>
+                </div>
+                    <div class="card-container top-gainers">
+                    <div class="card">
+                        <div class="stock-data">
+                            <img src="/images_req/googleIcon.svg" alt="Stock Icon">
+                            <span class="stock-names">Google</span>
+                        </div>
+                        <div class="stock-price">
+                            <p class="price">$674.70</p>
+                            <p class="percentage">60.05(9.77%)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="explore-header">
+                    <h1>Top Losers</h1>
+                </div>          
+                <div class="card-container top-losers">
+                    <div class="card">
+                        <div class="stock-data">
+                            <img src="/images_req/googleIcon.svg" alt="Stock Icon">
+                            <span class="stock-names">Google</span>
+                        </div>
+                        <div class="stock-price">
+                            <p class="price">$674.70</p>
+                            <p class="percentage">60.05(9.77%)</p>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+        </div>
+    </main>
+    <script src="./stocks.js"></script>
+</body>
+</html>

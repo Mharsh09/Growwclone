@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
-const Otp = require("../models/otp"); // your Mongoose schema
+const Otp = require("../models/otp"); // Mongoose schema
 
 // Generate 6-digit OTP
 const generateOTP = () => Math.floor(100000 + Math.random() * 900000);
