@@ -6,6 +6,7 @@ const otpRoutes = require("./routes/otpRoutes");
 const verifyRoutes = require("./routes/verifyRoutes");
 const stockRoutes = require("./routes/stockspath");
 const connectDB = require("./config/db");
+const authRoutes = require("./routes/authRoutes");
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/api", otpRoutes);
 app.use("/api", verifyRoutes);
 app.use("/api", stockRoutes);
+app.use("/api/auth", authRoutes);
 
 // DB Connection
 connectDB();

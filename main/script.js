@@ -65,6 +65,7 @@ conBtn.addEventListener('click', async () => {
   }
 
   try {
+    alert("✅ Sending Otp!");
     const res = await fetch("http://localhost:5050/api/send-otp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -127,7 +128,16 @@ verifyBtn.addEventListener('click', async () => {
 
     if (res.ok) {
       alert("✅ OTP Verified Successfully!");
-      window.location.href = "logged.html";
+      const verifyPage = document.querySelector('.verifypage');
+      const createPass = document.querySelector('.createpass');
+      const createpasUse = document.querySelector('.username321');
+
+      setTimeout(() => {
+        verifyPage.style.display = 'none';
+        createPass.style.display = 'flex';
+        createPass.classList.add('fade-in');
+        createpasUse.textContent = email;
+      }, 500);
     } else {
       alert(data.message || "❌ Invalid or expired OTP.");
     }
@@ -137,3 +147,21 @@ verifyBtn.addEventListener('click', async () => {
     alert("⚠️ Server error. Please try again.");
   }
 });
+
+document.getElementById("createpassbtn").addEventListener("click", () => {
+  const passwordInput = document.getElementById("pass-field");
+  const password = passwordInput.value.trim();
+  const passRegex = /^[A-Za-z0-9]{8,}$/;
+
+  if (!passRegex.test(password)) {
+    alert("Password must be at least 8 characters and alphanumerical.");
+    return;
+  }
+
+  window.location.href = "/main/stockss/stockshomepage.html";
+});
+
+
+
+
+
