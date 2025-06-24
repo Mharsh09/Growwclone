@@ -65,6 +65,41 @@ conBtn.addEventListener('click', async () => {
   }
 
   try {
+    const checkRes = await fetch("http://localhost:5050/api/auth/check-user", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+
+    const checkData = await checkRes.json();
+
+    if (checkRes.ok && checkData.exists) {
+      alert("User already exists! Redirecting to password page...");
+      const modalcontent = document.querySelector('.modal-rightcontent');
+      const createPass = document.querySelector('.createpass');
+      const createpasUse = document.querySelector('.username321');
+
+      setTimeout(() => {
+        modalcontent.style.display = 'none';
+        createPass.style.display = 'flex';
+        createPass.classList.add('fade-in');
+        createpasUse.textContent = email;
+
+        // New code to update heading and button text
+        const headingText = document.querySelector('.createpass .heading_texts');
+        const createBtn = document.getElementById('createpassbtn');
+        headingText.textContent = "Enter Your Password";
+        createBtn.textContent = "Verify Password";
+      }, 500);
+      return; // Stop execution here
+    }
+  } catch (checkErr) {
+    console.error("Error checking user existence:", checkErr);
+    alert("⚠️ Server error while checking user. Please try again.");
+    return;
+  }
+
+  try {
     alert("✅ Sending Otp!");
     const res = await fetch("http://localhost:5050/api/send-otp", {
       method: "POST",
@@ -148,7 +183,7 @@ verifyBtn.addEventListener('click', async () => {
   }
 });
 
-document.getElementById("createpassbtn").addEventListener("click", () => {
+document.getElementById("createpassbtn").addEventListener("click", async () => {
   const passwordInput = document.getElementById("pass-field");
   const password = passwordInput.value.trim();
   const passRegex = /^[A-Za-z0-9]{8,}$/;
@@ -158,10 +193,48 @@ document.getElementById("createpassbtn").addEventListener("click", () => {
     return;
   }
 
-  window.location.href = "/main/stockss/stockshomepage.html";
+  const email = document.querySelector(".username321").textContent;
+  const btnText = document.getElementById("createpassbtn").textContent;
+
+  try {
+    if (btnText === "Verify Password") {
+      // Existing user → Login instead of register
+      const res = await fetch("http://localhost:5050/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert("✅ Logged in successfully!");
+        window.location.href = "/main/stockss/stockshomepage.html";
+      } else {
+        alert(data.message || "❌ Incorrect credentials.");
+      }
+    } else {
+      // New user → Register
+      const res = await fetch("http://localhost:5050/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          password,
+          name: "Groww User"
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("🎉 Registered Successfully!");
+        window.location.href = "/main/stockss/stockshomepage.html";
+      } else {
+        alert(data.message || "❌ Registration failed.");
+      }
+    }
+  } catch (err) {
+    console.error("Authentication error:", err);
+    alert("⚠️ Server error.");
+  }
 });
-
-
-
-
-
