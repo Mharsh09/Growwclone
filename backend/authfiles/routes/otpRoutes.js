@@ -2,10 +2,31 @@ const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 const Otp = require("../models/otp"); // Mongoose schema
+const User = require("../models/User");
+
+// 🔍 Check if user already exists before sending OTP
+router.post("/auth/check-user", async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ message: "Email is required" });
+  }
+
+  try {
+    const userExists = await User.findOne({ email });
+    if (userExists) {
+      return res.status(200).json({ exists: true });
+    } else {
+      return res.status(200).json({ exists: false });
+    }
+  } catch (err) {
+    console.error("CHECK USER ERROR:", err.message);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+});
 
 // Generate 6-digit OTP
 const generateOTP = () => Math.floor(100000 + Math.random() * 900000);
-
 router.post("/send-otp", async (req, res) => {
   const { email } = req.body;
 

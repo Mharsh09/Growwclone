@@ -3,10 +3,36 @@ const axios = require('axios');
 const router = express.Router();
 
 router.get('/stocks', async (req, res) => {
-  const mockStocks = [
-    // 'RELIANCE.BSE', 'TCS.BSE', 'INFY.BSE', 'HDFCBANK.BSE', 'WIPRO.BSE'
+  // const stockSymbols = ['RELIANCE.BSE', 'TCS.BSE', 'INFY.BSE', 'HDFCBANK.BSE', 'WIPRO.BSE'];
+  // const apiKey = process.env.ALPHA_VANTAGE_API_KEY;
+  // const results = [];
+
+  // try {
+  //   const fetchData = stockSymbols.map(async (symbol) => {
+  //     const response = await axios.get(
+  //       `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`
+  //     );
+
+  //     const data = response.data['Global Quote'];
+  //     if (data && data['01. symbol']) {
+  //       results.push({
+  //         name: data['01. symbol'],
+  //         price: data['05. price'],
+  //         change: data['10. change percent'],
+  //         img: `/images_req/icons/${symbol.split('.')[0]}.png`,
+  //       });
+  //     }
+  //   });
+
+  //   await Promise.all(fetchData);
+  //   res.json(results);
+  // } catch (error) {
+  //   console.error("Error fetching stock data:", error);
+  //   res.status(500).json({ message: "Failed to fetch stock data" });
+  // }
+    const mockStocks = [
     {
-      name: "RELIANCE.BSE",
+      name:"RELIANCE.BSE",
       price: "2740.35",
       change: "+0.85%",
       img: "/images_req/icons/RELIANCE.png"
