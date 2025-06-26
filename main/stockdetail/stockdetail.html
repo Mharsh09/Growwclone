@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stock Detail | Growvest</title>
+  <link rel="stylesheet" href="stockdetail.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="/images_req/groww-logo-light.svg" alt="Groww Logo">
+    </div>
+    <ul class="nav-links">
+      <li>Explore</li>
+      <li>Holdings</li>
+      <li>Watchlist</li>
+    </ul>
+  </nav>
+
+  <div class="stock-container">
+    <div class="stock-info">
+      <img src="/images_req/icons/RELIANCE.png" alt="Logo" class="stock-logo"/>
+      <h1 id="stockName">Reliance:BSE</h1>
+    </div>
+      <div>
+        <h2 id="stockPrice">₹2620.45 <span class="price-change">+6.88%</span></h2>
+      </div>
+    
+
+    <div class="main-stock-section">
+      <div class="chart-container">
+        <canvas id="stockChart" width="700" height="300"></canvas>
+
+        <div class="chart-filters">
+          <button>1D</button>
+          <button>1W</button>
+          <button>1M</button>
+          <button>3M</button>
+          <button>6M</button>
+          <button>1Y</button>
+        </div>
+      </div>
+
+      <div class="buy-sell-box">
+
+
+        <div class="buy-sell-options">
+          <label>Qty</label>
+          <input class="input_num" type="number" id="quantity" placeholder="Enter quantity" />
+
+          <label>Price</label>
+          <input class="input_num" type="number" id="price" placeholder="Market Price" value="274.25" />
+
+          <div class="buy-sell-toggle">
+          <button class="buyBtn">Buy</button>
+          <button class="sellBtn">Sell</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="stockdetail.js"></script>
+</body>
+</html>

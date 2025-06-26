@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin:0%;
+    padding:0%;
+    box-sizing:border-box;
+    font-family:poppins;
+}
+
+body {
+    background-color:white;
+    color:#45475b;
+}
+
+/* ----- Navbar ----- */
+.navbar {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color:white;
+    padding:10px;
+    position:fixed;
+    border-bottom:1px solid #e0e0e0;
+    z-index:10;
+}
+
+.logo {
+    height:40px;
+    padding-left:10px;
+    display:flex;
+    align-items:center;
+}
+
+.logo img {
+    height:100%;
+    width:auto;
+    object-fit:contain;
+}
+
+.logo:hover {
+    cursor:pointer;
+}
+
+.navbar .nav-links {
+    list-style:none;
+    display:flex;
+    gap:20px;
+    color:#45475b;
+    font-weight:500;
+}
+
+.navbar .nav-links li {
+    cursor:pointer;
+    color:#333;
+}
+
+/* ----- Stock Info ----- */
+.stock-container {
+    padding:40px 30px;
+    width:100%;
+    background:white;
+    border-radius:8px;
+}
+
+.stock-info {
+    margin-top:20px;
+    align-items:center;
+    gap:20px;
+    display:flex;
+}
+
+.stock-logo {
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+
+.stock-info h1 {
+    margin:0;
+    font-size:1.5rem;
+}
+
+h2 {
+    margin:0;
+    font-weight:500;
+    color:#45475b;
+}
+
+.price-change {
+    color:#00b386;
+    margin-left:10px;
+    font-size:1rem;
+}
+
+/* ----- Chart & Filters ----- */
+#stockChart {
+    margin:30px 0;
+    width:100%;
+}
+
+.chart-filters {
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.chart-filters button {
+    padding:6px 12px;
+    background-color:#eef1f3;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.chart-filters button:hover {
+    background-color:#d8e6e4;
+}
+
+/* ----- Buy/Sell Section ----- */
+.buy-sell-box {
+    margin-top:30px;
+    border-top:1px solid #ddd;
+    padding-top:20px;
+}
+
+.buy-sell-toggle {
+    display:flex;
+    gap:10px;
+}
+
+.buy-sell-toggle button {
+    flex:1;
+    padding:10px;
+    font-weight:bold;
+    cursor:pointer;
+    border:none;
+    border-radius:6px;
+    color:white;
+    margin-top:1rem;
+}
+
+.buyBtn {
+    background-color:#06b489;
+}
+
+.sellBtn {
+    background-color:#e4404ef9;
+}
+
+.buy-sell-options {
+    font-family:poppins;
+    font-weight:500;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:100%;
+}
+
+.input_num {
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:12px;
+    transition:border-color 0.3s ease;
+    color:#333;
+    font-weight:200;
+    opacity:0.8;
+    font-family:'Poppins', sans-serif;
+}
+
+.input_num:focus {
+    outline:none;
+    border-color:#06b488;
+}
+
+.buyBtn:hover {
+    background-color:#06b489d7;
+}
+
+.sellBtn:hover {
+    background-color:#e63947e8;
+}
+
+/* ----- Layout Containers ----- */
+.main-stock-section {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:40px;
+}
+
+.chart-container {
+    flex:2;
+}
+
+.buy-sell-box {
+    flex:1;
+    border:1px solid #e0e0e0;
+    padding:30px;
+    border-radius:10px;
+    margin-top:0;
+}
