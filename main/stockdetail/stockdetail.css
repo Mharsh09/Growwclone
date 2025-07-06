@@ -68,6 +68,7 @@ body {
     align-items:center;
     gap:20px;
     display:flex;
+    margin-top: 2rem;
 }
 
 .stock-logo {

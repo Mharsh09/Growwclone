@@ -22,25 +22,25 @@
       <h2>Holdings (7)</h2>
         <div class="value">
           <div class="left">
-          <p>Current value</p>
-          <h3>₹26,000</h3>
-        </div>
-        <div class="right">
-          <p>Invested value</p>
-          <h3>₹30,000</h3>
-        </div>
+            <p>Current value</p>
+            <h3 id="current-value">₹0</h3>
+          </div>
+          <div class="right">
+            <p>Invested value</p>
+            <h3 id="invested-value">₹0</h3>
+          </div>
         </div>
         <div class="returns">
-        <div class="left">
-          <p>1D returns</p>
-          <p >+₹76.50 (0.60%)</p>
-        </div>
-        <div class="right">
-          <p>Total returns</p>
-          <p >-₹6,000.75 (21.32%)</p>
+          <div class="left">
+            <p>1D returns</p>
+            <p id="daily-return">+₹0.00 (0.00%)</p>
+          </div>
+          <div class="right">
+            <p>Total returns</p>
+            <p id="total-return">-₹0.00 (0.00%)</p>
+          </div>
         </div>
     </div>
-  </div>
     <div class="holdings-table">
       <table>
         <thead>
@@ -52,28 +52,8 @@
             <th>ROI</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td><strong>Suzlon Energy</strong><br><small>10 shares • Avg. ₹67.34</small></td>
-            <td>₹10000</td>
-            <td>₹8000</td>
-            <td>₹2000</td>
-            <td>-20.00%</td>
-          </tr>
-          <tr>
-            <td><strong>NTPC</strong><br><small>10 shares • Avg. ₹429.05</small></td>
-            <td>₹10000</td>
-            <td>₹8000</td>
-            <td>₹2000</td>
-            <td>-20.00%</td>
-          </tr>
-          <tr>
-            <td><strong>Concord Enviro Sys.</strong><br><small>10 shares • Avg. ₹827.05</small></td>
-            <td>₹10000</td>
-            <td>₹8000</td>
-            <td>₹2000</td>
-            <td>-20.00%</td>
-          </tr>
+        <tbody id="holdings-table-body">
+          <!-- User holdings will be injected here -->
         </tbody>
       </table>
     </div>
